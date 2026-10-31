@@ -4,13 +4,12 @@ body{
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
-    background:rgb(255, 255, 180);
-    color:rgba(87, 117, 144, 1);
+    color:#6a6a6a;
 
     background-color: #fffdf5;
     background-image:
-        linear-gradient(#e8dcc8 1px, transparent 1px),   /* 橫線 */
-        linear-gradient(90deg, #e8dcc8 1px, transparent 1px); /* 直線 */
+        linear-gradient(#e5e8c8 1px, transparent 1px),   /* 橫線 */
+        linear-gradient(90deg, #e5e8c8 1px, transparent 1px); /* 直線 */
     background-size: 30px 30px;   /* 每格大小 */
      font-family: "Chiron GoRound TC", sans-serif;
 }
@@ -48,16 +47,16 @@ header{
 
 /*logo*/
 .logo{
-    
-    flex:0 0 120px;
-
+position: absolute;
+    top: 20px;      /* 離上面的距離，越大越往下 */
+    left: 55px;     /* 離左邊的距離，越大越往右 */
+    width: 120px;
+    z-index: 10;
 }
 
 .logo img{
-    width: 100%;
+    width: 80%;
     margin: auto;
-    background: rgba(255, 255, 255, .5);
-	border-radius: 50%;
 }
 
 /*nav*/
@@ -89,7 +88,6 @@ nav a:hover{
 .hero{
     position: relative;   
     width: 100%;
-    background:rgba(87, 117, 144, .2);
 }
 
 .hero img{
@@ -168,35 +166,64 @@ section{
 
 section h1{
     flex:0 0 100%;
-    color:rgba(87, 117, 144, 1);
+    color:#6a6a6a;
     text-align: center;
 }
-
-/*card*/
-.card{
-	flex: 0 0 calc((100% - 10px *3)/4);
-	text-align:center;
-	cursor:pointer;
+.tag-list{
+    display: flex;
+    justify-content: center;   /* 整排置中 */
+    align-items: flex-start;   /* 每個吊牌上緣對齊，像掛在同一條線上 */
+    flex-wrap: wrap;           /* 畫面放不下時自動換到下一排 */
+    gap: 50px;                 /* 吊牌之間的距離 */
+    padding: 40px 20px;
 }
 
-.card img{
-	width:80%;
-	border-radius:50%;
-	border:solid 1px rgba(87, 117, 144, 1);
+.tag{
+    position: relative;
+    width: 150px;
+    padding: 50px 20px 40px;          /* 上面多留空間給圓孔 */
+    background-color: rgb(255, 225, 0);        /* 牛皮紙黃 */
+    text-align: center;
+     display: inline-block;
+
+    /* 把上方兩個角切成斜的，做出吊牌形狀 */
+    clip-path: polygon(25% 0, 75% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
     
-	-ms-transform: rotate(0deg); /* IE 9 */
-    -webkit-transform: rotate(0deg); /* Safari */
-    transform: rotate(0deg); /* Standard syntax */
-	
-	transition: transform 1.5s;
-	-webkit-transition: transform 1.5s;
 }
 
-.card:hover img{
-	-ms-transform: rotate(-20deg); /* IE 9 */
-    -webkit-transform: rotate(-20deg); /* Safari */
-    transform: rotate(-20deg); /* Standard syntax */
+/* 小圓孔 */
+.tag::before{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color:#fffdf5;        /* 和網頁背景同色，看起來像穿透 */
+    border: 1px solid rgb(203, 180, 7);
 }
+.tag-img{
+    width: 100%;          /* 寬度跟吊牌一樣 */
+    height: 180px;        /* 固定高度，每張吊牌才會一樣高 */
+    object-fit: cover;    /* 填滿框框，比例不同的照片多出來的會被裁掉 */
+    margin-bottom: 15px;  /* 和下面的文字隔開 */
+    display: block;
+    object-position: center;
+}
+.tag-name{
+    margin: 0 0 8px;
+    font-weight: bold;
+    color: #5a5a5a;
+}
+
+.tag-price{
+    margin: 0;
+    font-size: 24px;
+    color: #d9443a;                   /* 招牌紅 */
+}
+
 
 /*article*/
 article{
