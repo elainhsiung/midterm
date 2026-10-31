@@ -4,8 +4,14 @@ body{
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
+    background:rgb(255, 255, 180);
     color:rgba(87, 117, 144, 1);
 
+    background-color: #fffdf5;
+    background-image:
+        linear-gradient(#e8dcc8 1px, transparent 1px),   /* 橫線 */
+        linear-gradient(90deg, #e8dcc8 1px, transparent 1px); /* 直線 */
+    background-size: 30px 30px;   /* 每格大小 */
      font-family: "Chiron GoRound TC", sans-serif;
 }
 
