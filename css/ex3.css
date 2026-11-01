@@ -206,7 +206,7 @@ section h1{
 }
 .tag-img{
     width: 100%;          /* 寬度跟吊牌一樣 */
-    height: 180px;        /* 固定高度，每張吊牌才會一樣高 */
+    height: 160px;        /* 固定高度，每張吊牌才會一樣高 */
     object-fit: cover;    /* 填滿框框，比例不同的照片多出來的會被裁掉 */
     margin-bottom: 15px;  /* 和下面的文字隔開 */
     display: block;
@@ -216,12 +216,6 @@ section h1{
     margin: 0 0 8px;
     font-weight: bold;
     color: #5a5a5a;
-}
-
-.tag-price{
-    margin: 0;
-    font-size: 24px;
-    color: #d9443a;                   /* 招牌紅 */
 }
 
 
