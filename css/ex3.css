@@ -218,6 +218,39 @@ section h1{
     color: #5a5a5a;
 }
 
+.tag-wrap{
+    position: relative;
+    display: inline-block;
+    padding-top: 40px;            /* 吊牌上方留空間給繩子 */
+    transform-origin: top center;
+}
+
+.tag-wrap:hover{
+    animation: swing 0.8s ease;
+}
+
+.tag-wrap::before{
+    content: "";                  /* 偽元素一定要有這行才會出現 */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);  /* 精準置中 */
+    width: 2px;                   /* 繩子粗細 */
+    height: 63px;                 /* 繩子長度 */
+    background-color: #5a5a5a;
+    z-index: 1;                   /* 蓋在吊牌上面，才看得到穿進圓孔 */
+}
+
+@keyframes swing{
+    20%  { transform: rotate(8deg); }
+    40%  { transform: rotate(-6deg); }
+    60%  { transform: rotate(4deg); }
+    80%  { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+
 
 /*article*/
 article{
@@ -236,7 +269,7 @@ article{
 
 .b_left{
     flex: 0 0 30%; 
-max-width: 320px;
+    max-width: 320px;
 }
 
 .b_left img{
@@ -269,19 +302,6 @@ max-width: 320px;
     object-position: bottom;
 }
 
-.a_right{
-	flex:2;
-	padding: 4%;
-	box-sizing:border-box;
-	color:rgba(87, 117, 144, 1);
-	text-align:left;
-    line-height: 2rem;
-}
-
-
-.a_right h2{
-    font-size: 2.5rem;
-}
 
 /*footer*/
 footer{
