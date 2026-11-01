@@ -206,7 +206,7 @@ section h1{
 }
 .tag-img{
     width: 100%;          /* 寬度跟吊牌一樣 */
-    height: 160px;        /* 固定高度，每張吊牌才會一樣高 */
+    height: 155px;        /* 固定高度，每張吊牌才會一樣高 */
     object-fit: cover;    /* 填滿框框，比例不同的照片多出來的會被裁掉 */
     margin-bottom: 15px;  /* 和下面的文字隔開 */
     display: block;
@@ -221,23 +221,40 @@ section h1{
 
 /*article*/
 article{
-	flex:0 0 100%;
-	margin:auto;
-    margin-bottom: 30px;
-    border:solid 4px rgba(87, 117, 144, 1);
-    border-radius: 50px;
+	display: flex;
+    align-items: center;        /* 左右兩邊垂直置中 */
+    gap: 4%;                    /* 照片和文字之間的距離 */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;              /* 內容和邊框留空間，照片不會凸出去 */
     box-sizing: border-box;
-    display:flex;
+    border: 3px solid  #6a6a6aca;
+    border-radius: 30px;
+    background-color: #ffffffbb;
 }
 
-section > a:nth-of-type(2n) article{
-    flex-direction: row-reverse;
+
+.b_left{
+    flex: 0 0 30%; 
+max-width: 320px;
 }
 
-article:hover{
-    border:solid 8px rgba(87, 117, 144, 1);
-    background:rgba(87, 117, 144, .2);
+.b_left img{
+	display: block;
+    width: 100%;                /* 填滿左邊的框 */
+    height:auto;
+    border-radius: 24px;
 }
+
+
+.b_right{
+	flex: 1;                    /* 右邊佔滿剩下的空間 */
+    padding: 0;
+    color: #5a5a5a;
+    text-align: left;
+    line-height: 2rem;
+}
+
 
 .a_left{
     flex:1;
@@ -253,7 +270,7 @@ article:hover{
 }
 
 .a_right{
-	flex:1;
+	flex:2;
 	padding: 4%;
 	box-sizing:border-box;
 	color:rgba(87, 117, 144, 1);
