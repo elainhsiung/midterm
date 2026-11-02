@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -347,69 +351,103 @@ footer{
 @media only screen and (max-width: 768px) {
 
     body{
-    font-size: 1.3rem;
+        font-size: 1rem;
+    }
+
+    /*logo*/
+    .logo{
+        top: 10px;
+        left: 12px;
+        width: 60px;
+    }
+
+    .logo img{
+        width: 100%;
+        display: block;
+    }
+
+    /*nav*/
+    nav{
+        right: 0;                       /* 貼齊右邊，不會擠出畫面 */
+        padding: 0 8px;
+        gap: 0;
+        border-radius: 0 0 0 16px;      /* 只留左下圓角 */
+    }
+
+    nav a{
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+
+    /*hero*/
+    .hero h1{
+        font-size: 5vw;                 /* 跟著螢幕寬度縮放 */
+    }
+
+    .hero h2{
+        font-size: 9vw;
+    }
+
+    .hero-content.center h3{
+        font-size: 5.5vw;
+        white-space: nowrap;
+    }
+
+    /*marquee*/
+    .marquee{
+        padding: 12px 0;
+    }
+
+    /*section*/
+    section{
+        width: 90%;
+    }
+
+    /*tag*/
+    .tag-list{
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    /*article*/
+    article{
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .b_left{
+        flex: none;                     /* 取消原本的 30% */
+        width: 70%;
+        max-width: 280px;
+    }
+
+    .b_right{
+        line-height: 1.8;
+    }
+
+    /*review*/
+    .review-card{
+        flex-direction: column;         /* 照片在上、文字在下 */
+        align-items: stretch;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .review-img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .review-info h2{
+        font-size: 26px;
+    }
+
+    .review-info p{
+        font-size: 16px;
+    }
 }
-/*menu*/
-.menu{
-    margin:20px auto;
-    flex-direction: column;
-}
-
-/*logo*/
-.logo{
-    text-align: center;
-}
-
-.logo img{
-    width: 30%;
-    margin: auto;
-}
-
-
-/*nav*/
-nav{
-    text-align: center;
-}
-
-nav a{
-    padding: 10px;
-}
-
-/*hero*/
-.hero{
-    height: 60vh;
-}
-
-.hero h1{
-    top:40%;
-    font-size: 80px;
-}
-
-/*card*/
-.card{
-    flex: 0 0 calc((100% - 10px *1)/2);
-}
-
-/*article*/
-article{
-	flex-direction: column;
-}
-
-section > a:nth-of-type(2n) article{
-    flex-direction: column;
-}
-
-.a_right{
-    padding: 6%;
-}
-
-.a_right h2{
-    font-size: 2rem;
-}
-
-
-}
-
 
 
 
