@@ -353,12 +353,11 @@ footer{
     body{
         font-size: 1rem;
     }
-
-    /*logo*/
+/*logo*/
     .logo{
-        top: 10px;
-        left: 12px;
-        width: 60px;
+        top: 8px;
+        left: 10px;
+        width: 44px;               
     }
 
     .logo img{
@@ -380,14 +379,20 @@ footer{
     }
 
     /*hero*/
+    .hero-content{
+    top: 32%;                   /* 新增：從上面定位，在 logo 下方 */
+    bottom: auto;
+    left: 5%;
+    }
+
     .hero h1{
-        font-size: 5vw;                 /* 跟著螢幕寬度縮放 */
+    font-size: 4.5vw;           /* 5vw → 4.5vw */
+    margin-bottom: 4px;
     }
 
     .hero h2{
-        font-size: 9vw;
+    font-size: 8vw;             /* 9vw → 8vw */
     }
-
     .hero-content.center h3{
         font-size: 5.5vw;
         white-space: nowrap;
